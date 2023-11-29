@@ -1,9 +1,40 @@
+import { useState, useCallback } from 'react';
 import './App.css';
+import { ChildArea } from './components/ChildArea';
 
 function App() {
+  console.log("App");
+  const [text, setText] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onChangeText = (e) => {
+    setText(e.target.value);
+  };
+
+  const onClickOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // 通常の関数定義
+  // const onClickClose = () =>
+  //   setIsOpen(false);
+
+  // useCallbackを使った関数定義
+  const onClickClose = useCallback(() =>
+    setIsOpen(false), [setIsOpen]);
+
+
   return (
     <div className="App">
       <h1>React App</h1>
+      <input type="text" onChange={onChangeText} />
+      <br />
+      <br />
+      <button onClick={onClickOpen}>表示</button>
+      <ChildArea
+        isOpen={isOpen}
+        onClickClose={onClickClose}
+      />
     </div>
   );
 }
