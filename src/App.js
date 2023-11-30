@@ -44,6 +44,7 @@
 import { BrowserRouter, Link } from "react-router-dom";
 import "./App.css";
 import { Router } from "./router/Router";
+import { UserProvider } from "./providers/UserProvider";
 
 
 export default function App() {
@@ -58,7 +59,9 @@ export default function App() {
         <br />
         <Link to="/page2">Page2</Link>
       </div>
-      <Router />
+      <UserProvider >
+        <Router />
+      </UserProvider>
     </BrowserRouter>
 
   );

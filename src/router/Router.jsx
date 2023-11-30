@@ -23,7 +23,7 @@ export const Router = () => {
                 render={({ match: { url } }) => (
                     <Switch>
                         {page1Routes.map((route) => (
-                            console.log(route),
+                            // console.log(route),
                             <Route
                                 key={route.path}
                                 exact={route.exact}
@@ -54,6 +54,5 @@ export const Router = () => {
             </Route>
 
         </Switch >
-
     )
 };
