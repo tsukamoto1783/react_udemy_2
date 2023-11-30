@@ -6,6 +6,7 @@ import { Home } from "../components/Home";
 import { page1Routes } from "./Page1Routes";
 import { page2Routes } from "./Page2Routes";
 import { Page404 } from "../components/Page404";
+import { GetJson } from "../components/GetJson";
 
 
 
@@ -49,6 +50,11 @@ export const Router = () => {
                     </Switch>
                 )}
             />
+
+            <Route path="/get-json">
+                <GetJson />
+            </Route>
+
             <Route path="*">
                 <Page404 />
             </Route>
